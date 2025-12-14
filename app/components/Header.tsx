@@ -1,59 +1,77 @@
-import { Github, Twitter, Linkedin, Youtube, Instagram, CalendarDays } from "lucide-react";
+'use client';
+
+import { Github, Twitter, Linkedin, Youtube, Instagram, CalendarDays, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Header() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <header className="flex justify-between items-center px-2">
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-dark-primary to-purple-600 text-white flex items-center justify-center font-bold text-2xl shadow-lg border border-white/10">
+    <header className='flex justify-between items-center px-2'>
+      <div className='flex items-center gap-4'>
+        <div className='w-12 h-12 rounded-2xl bg-gradient-to-br from-dark-primary to-purple-600 text-white flex items-center justify-center font-bold text-2xl shadow-lg border border-white/10'>
           D3
         </div>
         <div>
-          <h1 className="font-bold text-xl leading-none tracking-tight">Digital Dreamers Den</h1>
-          <span className="text-xs text-dark-primary font-mono mt-1 block">/// EST. 2024</span>
+          <h1 className='font-bold text-xl leading-none tracking-tight'>Digital Dreamers Den</h1>
+          <span className='text-xs text-dark-primary font-mono mt-1 block'>/// EST. 2024</span>
         </div>
       </div>
-      <div className="flex gap-3">
-        <a
-          href="#"
-          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
-          aria-label="GitHub"
+      <div className='flex gap-3 items-center'>
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className='w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all'
+          aria-label='Toggle theme'
         >
-          <Github className="w-5 h-5" />
+          {theme === 'dark' ? (
+            <Sun className='w-5 h-5' />
+          ) : (
+            <Moon className='w-5 h-5' />
+          )}
+        </button>
+
+        <a
+          href='#'
+          className='w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all'
+          aria-label='GitHub'
+        >
+          <Github className='w-5 h-5' />
         </a>
         <a
-          href="#"
-          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
-          aria-label="Twitter"
+          href='#'
+          className='w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all'
+          aria-label='Twitter'
         >
-          <Twitter className="w-5 h-5" />
+          <Twitter className='w-5 h-5' />
         </a>
         <a
-          href="#"
-          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
-          aria-label="LinkedIn"
+          href='#'
+          className='w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all'
+          aria-label='LinkedIn'
         >
-          <Linkedin className="w-5 h-5" />
+          <Linkedin className='w-5 h-5' />
         </a>
         <a
-          href="#"
-          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
-          aria-label="YouTube"
+          href='#'
+          className='w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all'
+          aria-label='YouTube'
         >
-          <Youtube className="w-5 h-5" />
+          <Youtube className='w-5 h-5' />
         </a>
         <a
-          href="#"
-          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
-          aria-label="Instagram"
+          href='#'
+          className='w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all'
+          aria-label='Instagram'
         >
-          <Instagram className="w-5 h-5" />
+          <Instagram className='w-5 h-5' />
         </a>
         <a
-          href="#"
-          className="w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all"
-          aria-label="Meetup Registration"
+          href='#'
+          className='w-10 h-10 rounded-full bg-dark-card border border-dark-border flex items-center justify-center text-dark-muted hover:text-white hover:border-dark-primary transition-all'
+          aria-label='Meetup Registration'
         >
-          <CalendarDays className="w-5 h-5" />
+          <CalendarDays className='w-5 h-5' />
         </a>
       </div>
     </header>

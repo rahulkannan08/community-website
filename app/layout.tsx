@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -9,7 +10,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Digital Dreamers Den | Dark Mode",
+  title: "Digital Dreamers Den | Community",
   description: "The definitive community for AI Engineers & Full-Stack Developers. Less talk, more shipping.",
 };
 
@@ -21,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${jakarta.variable} antialiased selection:bg-indigo-500 selection:text-white p-4 md:p-6 lg:p-8`}>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
