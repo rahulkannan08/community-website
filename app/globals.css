@@ -74,10 +74,19 @@ body {
   font-family: var(--font-jakarta), sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Grid lines only in dark mode */
+[data-theme='dark'] body {
   background-image: linear-gradient(to right, var(--color-gradient-from) 1px, transparent 1px),
     linear-gradient(to bottom, var(--color-gradient-from) 1px, transparent 1px);
   background-size: 40px 40px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* No grid lines in light mode */
+[data-theme='light'] body {
+  background-image: none;
 }
 
 .bento-card {
