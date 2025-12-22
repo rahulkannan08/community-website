@@ -1,4 +1,4 @@
-import { Terminal, Cpu, Users, ArrowRight } from "lucide-react";
+import { Terminal, Cpu, Users, ArrowRight } from 'lucide-react';
 
 interface Tag {
   id: number;
@@ -31,21 +31,17 @@ const iconMap: Record<string, any> = {
 export default function NarrativeBlock({ data }: NarrativeProps) {
   return (
     <div className="space-y-6 relative z-10">
-      <div className="flex items-center gap-2">
-        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--color-primary)]/10 text-[var(--color-primary)] border border-[var(--color-primary)]/20 shadow-[0_0_10px_rgba(0,74,173,0.2)]">
-          {data.badge}
-        </span>
-      </div>
+      {/* Badge removed here to match other section styles */}
 
       <h2 className="text-3xl md:text-4xl font-bold font-sans">
-        {data.title.start}{" "}
-        <span className="text-gradient">{data.title.highlight1}</span>{" "}
-        {data.title.middle}{" "}
+        {data.title.start}{' '}
+        <span className="text-gradient">{data.title.highlight1}</span>{' '}
+        {data.title.middle}{' '}
         <span className="text-gradient">{data.title.highlight2}</span>
       </h2>
 
       <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-        {data.description}{" "}
+        {data.description}{' '}
         <span className="text-[var(--color-text)] font-semibold italic">
           {data.quote}
         </span>

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import { Cpu } from "lucide-react";
+import { useState, useEffect, useRef } from 'react';
+import { Cpu } from 'lucide-react';
 
 interface ScriptLine {
   type: string;
@@ -31,7 +31,7 @@ export default function TerminalBlock({ script }: { script: ScriptLine[] }) {
         () => {
           setCurrentCharIndex((prev) => prev + 1);
         },
-        currentScriptLine.type === "cmd" ? Math.random() * 50 + 50 : 20
+        currentScriptLine.type === 'cmd' ? Math.random() * 50 + 50 : 20
       );
       return () => clearTimeout(timeout);
     } else {
@@ -74,22 +74,22 @@ export default function TerminalBlock({ script }: { script: ScriptLine[] }) {
             <div
               key={idx}
               className={`${
-                line.type === "cmd" ? "mb-4 mt-4 first:mt-0" : "mb-1"
+                line.type === 'cmd' ? 'mb-4 mt-4 first:mt-0' : 'mb-1'
               }`}
             >
-              {line.type === "cmd" && (
+              {line.type === 'cmd' && (
                 <div className="flex items-center">
                   <span className="text-[var(--color-secondary)] mr-2">➜</span>
                   <span className="text-blue-400 mr-2">~</span>
                   <span className="text-gray-100">{line.text}</span>
                 </div>
               )}
-              {line.type === "output" && (
+              {line.type === 'output' && (
                 <div className="text-[var(--color-muted)] pl-4 border-l-2 border-[var(--color-border)] ml-1">
                   {line.text}
                 </div>
               )}
-              {line.type === "result" && (
+              {line.type === 'result' && (
                 <div className="text-[var(--color-primary-light)] pl-4 font-bold mt-2">
                   {line.text}
                 </div>
@@ -100,7 +100,7 @@ export default function TerminalBlock({ script }: { script: ScriptLine[] }) {
           {currentLineIndex < script.length && (
             <div
               className={`${
-                script[currentLineIndex].type === "cmd" ? "mt-4" : "mb-1"
+                script[currentLineIndex].type === 'cmd' ? 'mt-4' : 'mb-1'
               }`}
             >
               {/* Logic for active typing similar to above, simplified for brevity in this snippet */}
