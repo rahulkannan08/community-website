@@ -138,7 +138,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-dark-card rounded-bento p-6 sm:p-8 border border-dark-border bento-card">
+    <div>
       <div className="mb-6">
         <h3 className="font-bold text-2xl mb-2 bg-linear-to-r from-dark-primary to-dark-primary-light bg-clip-text text-transparent">
           Send Us a Message

@@ -2,7 +2,6 @@
 
 import SocialLinks from "./SocialLinks";
 import ContactForm from "./ContactForm";
-import ContactInfo from "./ContactInfo";
 import { MessageSquare } from "lucide-react";
 
 export default function ContactUs() {
@@ -56,47 +55,57 @@ export default function ContactUs() {
       />
 
       {/* Header */}
-      <div className="max-w-7xl mx-auto mb-8 sm:mb-12 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-card border border-dark-border mb-4">
-          <MessageSquare className="w-4 h-4 text-dark-primary" />
-          <span className="text-sm font-medium text-dark-muted">Get In Touch</span>
-        </div>
+      <div className="max-w-7xl mx-auto mb-8 sm:mb-12">
         <h2 
           id="contact-heading"
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4"
-          style={{
-            background: 'var(--gradient-hero)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text'
-          }}
+          className="text-2xl font-bold flex items-center gap-2"
         >
-          Connect With D3 Community
+          <MessageSquare className="w-6 h-6 text-dark-secondary" />
+          Get in Touch
         </h2>
-        <p className="text-dark-muted text-base sm:text-lg max-w-2xl mx-auto">
-          Join our vibrant community of AI Full-Stack Developers. Reach out through your preferred channel or send us a message.
-        </p>
       </div>
 
-      {/* Bento Grid Layout */}
+      {/* Combined Card Layout */}
       <div className="max-w-7xl mx-auto">
-        {/* Mobile: Stacked Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
-          {/* Social Links - Full width on mobile, spans 2 columns on desktop */}
-          <div className="lg:col-span-2">
+        {/* Social Links and Email Card */}
+        <div className="bg-dark-card rounded-bento border border-dark-border bento-card overflow-hidden">
+          {/* Social Links - Full Width */}
+          <div className="p-6 sm:p-8">
             <SocialLinks />
           </div>
 
-          {/* Contact Info - Full width on mobile, 1 column on desktop */}
-          <div className="lg:col-span-1">
-            <ContactInfo />
-          </div>
-
-          {/* Contact Form - Full width on all screens */}
-          <div className="lg:col-span-3">
-            <ContactForm />
+          {/* Email Button - Bottom */}
+          <div className="p-6 sm:p-8 border-t border-dark-border">
+            <div className="text-center w-full">
+              <h3 className="font-bold text-2xl mb-3 bg-linear-to-r from-dark-primary to-dark-primary-light bg-clip-text text-transparent">
+                Get in Touch
+              </h3>
+              <p className="text-dark-muted mb-6">
+                Have a question or want to collaborate? Reach out to us!
+              </p>
+              <a
+                href="mailto:d3communityofficial@gmail.com"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-dark-primary hover:bg-dark-primary-light text-white rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-dark-primary/50"
+              >
+                <MessageSquare className="w-5 h-5" />
+                <span className="font-semibold">Email Us</span>
+              </a>
+            </div>
           </div>
         </div>
+
+        {/* Commented out Contact Form - Will be enabled later */}
+        {/* <div className="bg-dark-card rounded-bento border border-dark-border bento-card overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-dark-border">
+              <ContactForm />
+            </div>
+            <div className="p-6 sm:p-8">
+              <SocialLinks />
+            </div>
+          </div>
+        </div> */}
+
       </div>
 
       {/* Additional Info */}

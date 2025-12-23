@@ -12,7 +12,7 @@ export default function SocialCard() {
       <div className="flex items-center gap-4 relative z-10">
         <div className="p-3 rounded-full text-white" style={{ background: 'var(--gradient-primary)' }}>
           <Users className="w-6 h-6" />
-        </div>
+        </div>https://www.linkedin.com/company/d3-community/
         <div>
           <h3 className="font-bold text-white group-hover:text-dark-primary transition-colors">
             Join the Collective
