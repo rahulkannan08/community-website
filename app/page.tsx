@@ -25,12 +25,12 @@ export default function Home() {
         {/* Main Bento Grid */}
         <div className='flex flex-wrap grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 md:h-[850px]'>
           <NextEventCard />
-          <StatsCard />
           <LocationCard />
+          <StatsCard />
           <CallForSpeakers />
           <CallForVolunteers />
-          <TechStackCard />
           <SocialCard />
+          <TechStackCard />
         </div>
 
         {/* Secondary Section: Past Logs & Team */}
