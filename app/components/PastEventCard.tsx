@@ -93,7 +93,7 @@ export default function PastEventCard() {
 
   return (
     <div 
-      className="col-span-1 md:col-span-4 rounded-bento p-8 border border-dark-border bento-card flex flex-col relative overflow-hidden group bg-gradient-card" 
+      className="col-span-1 md:col-span-4 rounded-bento p-8 border border-dark-border bento-card flex flex-col relative overflow-hidden group bg-dark-card" 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       role="region"

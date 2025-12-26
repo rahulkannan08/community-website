@@ -27,7 +27,7 @@ export default function NextEventCard() {
   return (
     <>
       {upcomingEvents.map((event) => (
-        <div key={event.id} className="md:col-span-2 rounded-bento p-8 border border-dark-border bento-card flex flex-col relative overflow-hidden group bg-gradient-card">
+        <div key={event.id} className="md:col-span-2 rounded-bento p-8 border border-dark-border bento-card flex flex-col relative overflow-hidden group bg-dark-card">
           <div className="relative z-10 h-full flex flex-col">
             <div className="flex justify-between items-start mb-auto">
               <div className="p-3 bg-dark-card border border-dark-border rounded-xl">
