@@ -1,23 +1,21 @@
-"use client"
+'use client';
 
-import contributors from "@/public/contributors.json"
-import { Github, Linkedin } from "lucide-react"
+import contributors from '@/public/contributors.json';
+import { Github, Linkedin } from 'lucide-react';
 
 type Contributor = {
-  id: string
-  name: string
-  role: string
-  avatar: string
-  github?: string
-  linkedin?: string
-}
+  id: string;
+  name: string;
+  role: string;
+  avatar: string;
+  github?: string;
+  linkedin?: string;
+};
 
 export default function ContributorsSection() {
   return (
-    <section className="container py-16">
-       <h2 className="mb-8 text-3xl font-bold text-dark-text">
-        Contributors
-      </h2>
+    <section className="space-y-6">
+      <h2 className="mb-8 text-3xl font-bold text-dark-text">Contributors</h2>
 
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {contributors.map((c: Contributor) => (
@@ -25,11 +23,11 @@ export default function ContributorsSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
 function ContributorCard({ contributor }: { contributor: Contributor }) {
-  const { name, role, avatar, github, linkedin } = contributor
+  const { name, role, avatar, github, linkedin } = contributor;
 
   return (
     <div
@@ -54,9 +52,7 @@ function ContributorCard({ contributor }: { contributor: Contributor }) {
         {name}
       </h3>
 
-      <p className="text-sm text-dark-muted">
-        {role}
-      </p>
+      <p className="text-sm text-dark-muted">{role}</p>
 
       <div className="mt-4 flex gap-3">
         {github && (
@@ -75,7 +71,7 @@ function ContributorCard({ contributor }: { contributor: Contributor }) {
         )}
       </div>
     </div>
-  )
+  );
 }
 
 function SocialIcon({
@@ -83,9 +79,9 @@ function SocialIcon({
   icon,
   label,
 }: {
-  href: string
-  icon: React.ReactNode
-  label: string
+  href: string;
+  icon: React.ReactNode;
+  label: string;
 }) {
   return (
     <a
@@ -108,5 +104,5 @@ function SocialIcon({
     >
       {icon}
     </a>
-  )
+  );
 }
